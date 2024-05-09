@@ -1,0 +1,260 @@
+h3 {
+    color: #A4A1BC; /* Set purple color for all h3 elements */
+    font-size: 25px;
+}
+
+p {
+    font-size: 16px; 
+}
+
+.section_title {
+    margin-bottom: 20px; /* Reduce the bottom margin of the section title */
+    margin-top: 10px;
+}
+
+
+
+/* Hero Section */
+.portfolio_hero {
+    padding-top: 200px;
+    position: relative;
+    display: block;
+    text-align: center; /* Center all content */
+}
+
+.portfolio_hero .hero_container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio_hero h4 {
+    /* font-size: 28px; */
+    /* font-weight: 600;
+    text-transform: uppercase; */
+    color: var(--title-color);
+    margin-bottom: 30px; /* Reduced space between h4 and p */
+}
+
+.portfolio_hero p {
+    margin: 0 auto 30px; /* Increased space between p and the image */
+    color: #333;
+    font-size: 18px;
+    font-style: italic;
+    max-width: 800px; /* Optional: To control the width of the paragraph if it's too wide */
+}
+
+.portfolio_hero img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures the image is centered since it's a block element */
+    margin: 0 auto 40px; /* Space below the image */
+}
+
+.project_details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    max-width: 60%;
+    margin: auto;
+}
+
+.detail_column {
+    flex: 1;
+    text-align: center;
+    margin: 0 40px; /* Adjusted margin for spacing between columns */
+    
+}
+
+.detail_column h5 {
+    color: #A4A1BC;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.detail_column p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 0;
+}
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 768px) {
+    .project_details {
+        max-width: 80%; /* Adjusted max-width for smaller screens */
+    }
+
+    .detail_column {
+        margin: 0 10px; /* Adjusted margin for spacing between columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .project_details {
+        max-width: 90%; /* Further adjusted max-width for smaller screens */
+    }
+    
+    .detail_column {
+        margin: 0 5px; /* Further adjusted margin for spacing between columns on smaller screens */
+    }
+}
+/* Overview */
+.overview_section {
+    background-color: #eceff1ea; /* Set background color for the overview section */
+    padding: 100px 0; /* Adjust padding as needed */
+}
+
+.overview_container {
+    display: flex;
+    justify-content: space-between; /* Split the section into two columns */
+    align-items: center; /* Align items at the top */
+    flex-wrap: wrap;
+}
+.overview_section .container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+.overview_details {
+    /* flex: 0 0 70%; Set a wider width for the overview_details section */
+    padding: 0 20px; /* Add padding to create space between columns */
+}
+
+.overview_additional {
+    flex: 0 0 20%; /* Set a narrower width for the overview_additional section */
+    padding: 0 20px; /* Add padding to create space between columns */
+}
+
+.overview_details h2 {
+    font-size: 30px;
+}
+
+.overview_details h3,
+.overview_additional h3 {
+    font-size: 20px;
+    margin-top: 20px; 
+}
+
+.overview_details p,
+.overview_additional p {
+    font-family: 'Inter', sans-serif; 
+    font-size: 16px; 
+    margin-bottom: 20px; 
+}
+
+.overview_additional .btn {
+    margin-top: 20px; 
+}
+
+/* Emphasize */
+.emphasize_section {
+    padding: 100px 0; /* Adjust padding as needed */
+}
+
+.emphasize_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.emphasize_item {
+    margin-bottom: 40px; /* Add space between emphasize items */
+}
+
+.emphasize_item p {
+    font-family: 'Inter', sans-serif; /* Use Inter font for paragraphs */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-top: 20px;
+}
+
+.emphasize_item ul {
+    margin-top: 10px; /* Add space above the bullet points */
+    padding-left: 20px; /* Set left padding to indent the bullet points */
+    list-style-type: disc; /* Set the list-style-type to disc (default bullet points) */
+    font-family: 'Inter', sans-serif;
+}
+
+.emphasize_item img {
+    margin-top: 20px; /* Add space above the image */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+}
+
+
+
+/* Define & Ideate */
+.define_section {
+    padding: 100px 0; /* Adjust padding as needed */
+}
+
+.define_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.define_item {
+    margin-bottom: 40px; /* Add space between emphasize items */
+}
+
+.define_item p {
+    font-family: 'Inter', sans-serif; /* Use Inter font for paragraphs */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add space between paragraphs */
+}
+
+
+.define_item .btn {
+    /* Your existing button styles */
+    margin-top: 20px; /* Add space above the button */
+}
+.define_item ul {
+    margin-top: 10px; /* Add space above the bullet points */
+    padding-left: 20px; /* Set left padding to indent the bullet points */
+    list-style-type: disc; /* Set the list-style-type to disc (default bullet points) */
+    font-family: 'Inter', sans-serif;
+}
+
+.define_item img {
+    margin-top: 20px; /* Add space above the image */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+}
+
+.link_box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.link_box a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Prototype */
+.prototype_section {
+    padding: 100px 0; /* Adjust padding as needed */
+}
+
+.prototype_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.view-prototype-button {
+    width: 100%; /* Full width of its container */
+    height: 40px; /* Fixed height */
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Text size */
+    text-align: center; /* Center text */
+    padding: 10px 20px; /* Padding for larger click area and better aesthetics */
+    margin: 10px 0; /* Margin around the button for spacing */
+}

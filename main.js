@@ -1,29 +1,82 @@
-const iconToggle = document.querySelector('.toggle_icon');
-const navbarMenu = document.querySelector('.menu');
-const menuLinks = document.querySelectorAll('.menu_link'); 
-const iconClose = document.querySelector('.close_icon');
+document.addEventListener('DOMContentLoaded', function() {
+    const navbarMenu = document.querySelector('.menu');
+    const iconToggle = document.querySelector('.toggle_icon');
+    const iconClose = document.querySelector('.close_icon');
+    const logoLink = document.querySelector('.logo a');
+    const aboutLink = document.querySelector('.menu_link[href="#about"]');
+    const menuLinks = document.querySelectorAll('.menu_link');
+    const readCaseStudyBtn = document.getElementById('r eadCaseStudyBtn');
+    const portfolioLink = document.querySelector('.menu_link[href="#projects"]');
 
-iconToggle.addEventListener('click', () => {
-    navbarMenu.classList.toggle('active');
-});
-
-iconClose.addEventListener('click', () => {
-    navbarMenu.classList.remove('active');
-});
-
-menuLinks.forEach((menuLink) => {
-    menuLink.addEventListener('click', () => {
+    iconToggle.addEventListener('click', () => {
+        navbarMenu.classList.toggle('active');
+    });
+    
+    iconClose.addEventListener('click', () => {
         navbarMenu.classList.remove('active');
-    })
+    });
+
+
+    // Handle logo click (go to homepage)
+    logoLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'index.html';
+    });
+
+    // Handle about link click (go to about page)
+    aboutLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'about.html';
+    });
+
+    // Handle portfolio link click (scroll to portfolio section)
+    portfolioLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        scrollToSection('#projects');
+    });
+
+    // Handle menu links click (smooth scroll or page navigation)
+    menuLinks.forEach(function(menuLink) {
+        menuLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = menuLink.getAttribute('href').substr(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                const topOffset = navbarMenu.offsetHeight;
+                const targetPosition = targetSection.offsetTop - topOffset;
+                if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    window.location.href = targetSection.getAttribute('id') + '.html';
+                }
+                navbarMenu.classList.remove('active');
+            }
+        });
+    });
+
+    // Handle readCaseStudyBtn click (go to recipease page)
+    if (readCaseStudyBtn) {
+        readCaseStudyBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'recipease.html'; // Change URL as needed
+        });
+    }
+
+    // Function to scroll to a specific section
+    function scrollToSection(selector) {
+        const targetSection = document.querySelector(selector);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
 });
 
-// Change background header
-function scrollHeader() {
-    const header = document.getElementById('header');
-    this.scrollY >= 20 ? header.classList.add('active') : header.classList.remove('active');
-}
-
-window.addEventListener('scroll', scrollHeader)
 
 // Hero Type effect
 const typed = document.querySelector('.typed');
@@ -40,48 +93,3 @@ if(typed) {
     });
 }
 
-// Scroll sections active links
-const sections = document.querySelectorAll('section[id]');
-
-function scrollActive() {
-    const scrollY = window.pageYOffset; 
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 50; 
-
-        let sectionId = section.getAttribute('id');
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector('.menu a[href *=' + sectionId + ']').classList.add('active-link');
-        } else {
-            document.querySelector('.menu a[href *=' + sectionId + ']').classList.remove('active-link');
-        }
-    })
-}
-
-window.addEventListener('scroll', scrollActive);
-
-
-// Experience scroll
-const pages = document.querySelectorAll('.page');
-const experience = document.querySelector('.experience');
-
-function experienceActive() {
-    const scrollY = window.pageYOffset;
-
-    pages.forEach(page => {
-        const sectionHeight = page.offsetHeight;
-        const sectionTop = page.offsetTop;
-
-        let sectionId = page.getAttribute('id');
-
-        if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector('.experience_tabs a[href *=' + sectionId + ']').classList.add('current')
-        } else {
-            document.querySelector('.experience_tabs a[href *=' + sectionId + ']').classList.remove('current')
-        }
-    })
-}
-
-window.addEventListener('scroll', experienceActive)
