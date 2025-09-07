@@ -26,6 +26,17 @@
     font-style: italic;
 }
 
+.about_content a {
+    color: var(--main-color);   
+    text-decoration: none;   
+}
+  
+  .about_content a:hover {
+    color: #646090;             
+    text-decoration: underline; /
+  }
+
+
 @media screen and (max-width: 992px) {
     .about_container {
         grid-template-columns: repeat(2, 1fr);
