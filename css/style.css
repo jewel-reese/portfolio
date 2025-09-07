@@ -328,6 +328,11 @@ header .container {
     max-width: 100%; 
 }
 
+.hero_img img {
+  width: 350px;
+  height: auto;
+}
+
 .hero_img img:hover {
     transform: rotate(-6deg);
 }
